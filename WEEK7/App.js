@@ -5,13 +5,13 @@ import { Text, StyleSheet, View, Image, TextInput, TouchableOpacity } from 'reac
 
 import logo from "./assets/Image95.png";
 import mailIcon from "./assets/Frame.png";
-import Screen2 from './Screen2';
+import Screen2 from './components/Screen2';
+import Screen3 from './components/Screen3'
 
 const Stack = createStackNavigator();
 
 function HomeScreen({ navigation }) {
   const [name, setName] = useState(''); 
-
   return (
     <View style={styles.container}>
       <Image source={logo} style={{ width: 200, height: 200, marginBottom: 50 }} />
@@ -27,7 +27,7 @@ function HomeScreen({ navigation }) {
       </View>
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate('Screen2', { userName: name })}  // Truyền tên qua navigation
+        onPress={() => navigation.navigate('Screen2', { userName: name })}
       >
         <Text style={styles.buttonText}>GET STARTED -></Text>
       </TouchableOpacity>
@@ -41,6 +41,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen}  options={{ headerShown: false }}/>
         <Stack.Screen name="Screen2" component={Screen2}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Screen3" component={Screen3}  options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
