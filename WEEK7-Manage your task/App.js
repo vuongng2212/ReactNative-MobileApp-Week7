@@ -1,4 +1,4 @@
-import React, { useState } from 'react';  // Nhập useState
+import React, { useState } from 'react';  
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Text, StyleSheet, View, Image, TextInput, TouchableOpacity } from 'react-native';
